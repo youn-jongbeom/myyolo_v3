@@ -9,5 +9,5 @@ wget "$IMAGE_URL" -O input.jpg
 # 2. Darknet detector 실행 (결과물로 predictions.jpg가 생성됨)
 ./darknet detector test cfg/coco.data cfg/yolov3.cfg yolov3.weights input.jpg
 
-# 3. (중요!) 결과 이미지를 /output 선반으로 옮기기
+# 3. 결과 이미지를 /output 선반으로 옮기기
 mv predictions.jpg /output/
