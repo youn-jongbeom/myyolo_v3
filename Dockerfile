@@ -25,9 +25,12 @@ RUN wget https://data.pjreddie.com/files/yolov3.weights
 # 7. (중요!) 결과물을 담을 /output 선반(폴더) 만들기
 RUN mkdir /output
 
+
 # 8. 실행 스크립트 복사 및 실행 권한 부여
 COPY entrypoint.sh .
+RUN sed -i 's/\r$//' entrypoint.sh 
 RUN chmod +x entrypoint.sh
+
 
 # 9. 컨테이너 실행 시 entrypoint.sh 스크립트 실행
 ENTRYPOINT ["./entrypoint.sh"]
